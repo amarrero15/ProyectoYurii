@@ -1,9 +1,9 @@
 const router= require("express").Router();
 const datos= require("../controllers/datos.controllers");
 
-router.get('/imporCliente', datos.importarCliente);
-router.get('/imporProducto', datos.importarProductos);
-router.get('/imporMarca', datos.importarMarca);
-router.get('/imporCompras', datos.importarCompras);
+router.get('/importarCliente', datos.importarCliente);
+router.get('/importarProducto', datos.importarProductos);
+router.get('/importarMarca', datos.importarMarca);
+router.get('/importarCompras', datos.importarCompras);
 
 module.exports= router;
