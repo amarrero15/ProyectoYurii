@@ -1,0 +1,422 @@
+.joinUs{
+    width: 237px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Bryant Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 32px;
+    /* identical to box height, or 107% */
+
+    text-align: center;
+
+    /* Primary/Brand_1 */
+
+    color: #D76928;
+}
+/*Branches*/
+.branchName{
+    width: auto;
+    height: 14;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    color: #45485B;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        height:12px;
+        font-size: 12px;
+        line-height: 12px;
+    } 
+}
+.branchAddress{
+    width: auto;
+    height: 13px;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #6C757D;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        height:12px;
+        font-size: 12px;
+        line-height: 12px;
+    } 
+}
+.branchReview{
+    width: 251px;
+    height: auto;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #6C757D;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width: 256px;
+        //height:12px;
+        font-size: 12px;
+        line-height: 12px;
+    } 
+}
+/*Company View*/
+.aboutCompany{
+    width: auto;
+    height: 18px;
+    font-family: 'Bryant Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    /* identical to box height */
+    
+    
+    /* Greyscale/Grey_9 */
+    
+    color: #45485B;    
+}
+.companyTitle{
+    width: auto;
+    height: 16px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #383838;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        height:13px;
+        font-size: 13px;
+        line-height: 13px;
+    } 
+}
+.description{
+    width: 477px;
+    height: auto;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #6C757D;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width: 294px;
+        height: auto;
+        font-size: 13px;
+        line-height: 13px;
+    } 
+}
+.incentive{
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #6C757D;
+}
+/*Companies Card*/
+.companyValuation{
+    margin-top: 6px;
+    margin-right: 5px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    /* identical to box height */
+    /* Greyscale/Grey_9 */
+    color: #45485B;   
+}
+.companyValuationCategory{
+    margin-top: 6px;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    /* identical to box height */
+    /* Greyscale/Grey_9 */
+    color: #45485B;   
+}
+.companySector{
+    margin-right: 6px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height */
+
+
+    /* Greyscale/Grey_7 */
+
+    color: #969CAC;
+}
+.companySectorName{
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    
+    /* Greyscale/Grey_7 */
+    
+    color: #969CAC;
+}
+.companyName{
+    width: auto;
+    height: 20px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+    
+    
+    /* Primary/Brand_1 */
+    
+    color: #D76928;
+}
+.companyResume{
+    width: 372px;
+    height: 42px;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    
+    /* Greyscale/Grey_8 */
+    
+    color: #6C757D;
+}
+.showMore{
+    margin-top: 12px;
+    font-family: 'Bryant Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    
+    /* Secondary/Comple_2 */
+    
+    color: #69AAB9;
+}
+/* Offer Card*/
+.offerCardTitle{
+    width: auto;
+    padding-top: 10px;
+    padding-top: 6px;
+    padding-right: 135px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    
+    /* Greyscale/Grey_9 */
+    
+    color: #45485B;   
+}
+.offerCardLocation{
+    width: auto;
+    height: 16px;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #969CAC;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width:160px;
+        height:auto;
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 14px;
+    } 
+}
+.offerCardJobName{
+    width: auto;
+    height: 20px;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-bottom: 11px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #D76928;
+}
+.offerCardCharacteristics{
+    width: auto;
+    height: 14px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    color: #6C757D;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width:auto;
+        height:13px;
+        font-size: 13px;
+        line-height: 13px;
+    } 
+}
+.offerCardDescription{
+    width: auto;
+    height: 13px;
+    margin-left: 2px;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #6C757D;
+}
+/*Offer Location Popup*/
+.offerLocationMessage{
+    width: 588px;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 32px;    
+    text-align: center;
+    color: #0F87AA;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width: 271px;
+        height: 44px;
+        font-size: 22px;
+        line-height: 22px;
+     }
+
+}
+.companyNameCard{
+    width: 134px;
+    height: 18px;
+    margin-left: 39px;
+    font-family: 'Bryant Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: #D76928;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width:97px;
+        height:13px;
+        font-size: 13px;
+        line-height: 13px;
+       } 
+}
+.locationTextCard{
+    width: auto;
+    height: 16px;
+    margin-left: 39px;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    /* Greyscale/Grey_9 */
+
+    color: #45485B;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        height:11px;
+        font-size: 11px;
+        line-height: 11px;
+       } 
+}
+/*Postulation Delete Popup*/
+.postulationDeleteMessage{
+    width: 345px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Bryant Pro Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 32px;
+    text-align: center;
+    color: #0F87AA;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        width: 253px;
+        height: 52px;
+        font-size: 22px;
+        line-height: 26px;
+     }
+}
+/*Offers View*/
+.sectionName{
+    width: auto;
+    height: 24px;
+    margin-left: 36px;
+    font-family: 'Bryant Pro Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    
+    color: #383838;
+    @media screen and (max-width:360px) and (orientation: portrait) {
+        height:20px;
+        margin-left: 12px;
+        font-size: 20px;
+        line-height: 20px;
+    }    
+}
+.offerTabLabel{
+    width: auto;
+    font-family: 'Bryant Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #969CAC;
+}
+/*Stepper*/
+.stepTitle{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Bryant Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 32px;
+    /* identical to box height, or 107% */
+
+    text-align: center;
+
+    /* Primary/Brand_1 */
+
+    color: #D76928;
+
+}

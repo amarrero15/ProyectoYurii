@@ -1,0 +1,15 @@
+<div>
+    <div style="margin-top: 100px;">
+        <label class="title" for="">Top 7 de productos más vendidos</label>
+    </div>
+
+    <div class="productList">
+        <mat-list *ngFor="let producto of productos; let i= index" role="list">
+            <mat-list-item  class="product" role="listitem">
+                <label  style="width: 400px;">{{producto.nombre}}</label>
+                <label class="units" >{{producto.cantidad}}</label>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </div>
+</div>

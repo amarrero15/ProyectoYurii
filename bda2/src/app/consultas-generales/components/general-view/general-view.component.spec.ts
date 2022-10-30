@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FileLoaderComponent } from './file-loader.component';
+import { GeneralViewComponent } from './general-view.component';
 
-describe('FileLoaderComponent', () => {
-  let component: FileLoaderComponent;
-  let fixture: ComponentFixture<FileLoaderComponent>;
+describe('GeneralViewComponent', () => {
+  let component: GeneralViewComponent;
+  let fixture: ComponentFixture<GeneralViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FileLoaderComponent ]
+      declarations: [ GeneralViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FileLoaderComponent);
+    fixture = TestBed.createComponent(GeneralViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
