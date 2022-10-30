@@ -8,6 +8,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import { GeneralComponent } from './pages/general/general.component';
 import { GeneralViewComponent } from './components/general-view/general-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GeneralViewComponent } from './components/general-view/general-view.com
   ],
   imports: [
     CommonModule
+    ,HttpClientModule
     ,MatDividerModule
     ,MatGridListModule
     ,MatListModule
