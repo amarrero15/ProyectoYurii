@@ -1,0 +1,41 @@
+<div>
+    <div>
+        <label class="title" for="">Búsqueda de Clientes</label>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-4">
+            <label for="exampleFormControlInput1" class="form-label grayFont_9" >Nombre del Cliente<a style="color: #D76928;">*</a></label>
+            <input type="text" class="form-control"  list="datalistOptions"  id="clientName" placeholder="Nombre" [(ngModel)]="this.clientName" >
+        </div>
+        <div class="col-md-4">
+            <label for="exampleFormControlInput1" class="form-label grayFont_9" >Apellido del Cliente<a style="color: #D76928;">*</a></label>
+            <input type="text" class="form-control"  list="datalistOptions" id="clientLastName" placeholder="Apellido" [(ngModel)]="this.clientLastName" >
+        </div>
+        <div class="col-md-4">
+            <button class="searchButton" >Buscar</button>
+        </div>
+
+    </div>
+    <div>
+        <div>
+            <table mat-table [dataSource]="datos"  #tabla1>
+    
+                <ng-container matColumnDef="producto">
+                  <th mat-header-cell *matHeaderCellDef class="form-label"> Producto</th>
+                  <td mat-cell *matCellDef="let articulo" class="rows" > {{articulo.nombre}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="cantidad">
+                  <th mat-header-cell *matHeaderCellDef class="form-label"> Cantidad</th>
+                  <td mat-cell *matCellDef="let articulo" class="units"> {{articulo.cantidad}} </td>
+                </ng-container>
+              
+              
+                <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+              </table>
+        </div>
+    </div>
+
+
+</div>
