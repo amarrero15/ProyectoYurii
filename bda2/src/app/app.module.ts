@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './workflow/components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultasGeneralesModule } from './consultas-generales/consultas-generales.module';
+import { GestionModule } from './gestion/gestion.module';
 
 
 
@@ -19,6 +20,7 @@ import { ConsultasGeneralesModule } from './consultas-generales/consultas-genera
     AppRoutingModule,
     BrowserAnimationsModule,
     ConsultasGeneralesModule,
+    GestionModule
 
   ],
   providers: [],
