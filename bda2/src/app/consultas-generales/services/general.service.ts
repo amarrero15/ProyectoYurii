@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GeneralService {
-  API_URI = 'http://local-host:3000';
+  API_URI = 'http://localhost:3000';
   constructor(private http:HttpClient) { }
 
   getConsulta1(){

@@ -13,8 +13,8 @@ export class BrandRankingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getProductRanking(){
-    this.generalService.getConsulta1().subscribe(res=>{
+  getBrandRanking(){
+    this.generalService.getConsulta2().subscribe(res=>{
       this.marcas=res;
     })
   }

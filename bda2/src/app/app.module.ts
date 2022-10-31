@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './workflow/components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultasGeneralesModule } from './consultas-generales/consultas-generales.module';
+import { GestionModule } from './gestion/gestion.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ConsultasGeneralesModule
+    ConsultasGeneralesModule,
+    GestionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
