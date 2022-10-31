@@ -1,8 +1,8 @@
 const generalController={};
 const driver=require("../database/database");
-var nuevoVector=[];
-var top5Marcas=[];
-var comprasArr=[]
+var nuevoVector=[]; //var global de consulta 1
+var top5Marcas=[]; //var global de consulta 2
+var comprasArr=[] //var global de consulta 3
 //******FUNCIONES Y CONSULTAS******/
 
 
@@ -13,10 +13,10 @@ generalController.consulta1=(req, res) => {    //maneja peticiones y respuestas 
     session
         .run("MATCH (n:Compras) WHERE n.idProducto IS NOT NULL AND n.cantidad IS NOT NULL SET n.idProducto = toString(n.idProducto), n.cantidad=toString(n.cantidad) RETURN n")
         .then(function(result){
-            var comprasArr=[]; 
+            var comprasArr1=[]; 
             result.records.forEach(function(record){
                 //console.log(record._fields[0].properties)
-                comprasArr.push({
+                comprasArr1.push({
                     idProducto: record._fields[0].properties.idProducto, //SOLO PARA STRING
                     cantidad: record._fields[0].properties.cantidad
                 });
@@ -28,7 +28,7 @@ generalController.consulta1=(req, res) => {    //maneja peticiones y respuestas 
             }*/
             session.close();
 
-            contarDuplicados(comprasArr);
+            contarDuplicados(comprasArr1);
 
             res.json(nuevoVector);
         })
@@ -38,15 +38,15 @@ generalController.consulta1=(req, res) => {    //maneja peticiones y respuestas 
    
 }
 
-function contarDuplicados(comprasArr){
-    let nuevoVector =[] 
-    comprasArr.forEach((elemento) => {
-        nuevoVector.push({
+function contarDuplicados(comprasArr1){
+    let nuevoVector1 =[] 
+    comprasArr1.forEach((elemento) => {
+        nuevoVector1.push({
             idProducto: Number(elemento.idProducto),
             cantidad: Number(elemento.cantidad)
         })
     });
-    const compraSinDuplicados = nuevoVector.reduce((acumulador,  valorActual) => {
+    const compraSinDuplicados = nuevoVector1.reduce((acumulador,  valorActual) => {
         const elementoYaExiste = acumulador.find(elemento => elemento.idProducto === valorActual.idProducto);
         if (elementoYaExiste) {
         return acumulador.map((elemento) => {
@@ -129,10 +129,10 @@ generalController.consulta2=(req, res) => {    //maneja peticiones y respuestas 
     session
         .run("MATCH (n:Compras) WHERE n.idProducto IS NOT NULL AND n.cantidad IS NOT NULL SET n.idProducto = toString(n.idProducto), n.cantidad=toString(n.cantidad) RETURN n")
         .then(function(result){
-            var comprasArr=[]; 
+            var comprasArr1=[]; 
             result.records.forEach(function(record){
                 //console.log(record._fields[0].properties)
-                comprasArr.push({
+                comprasArr1.push({
                     idProducto: record._fields[0].properties.idProducto, //SOLO PARA STRING
                     cantidad: record._fields[0].properties.cantidad
                 });
@@ -143,7 +143,7 @@ generalController.consulta2=(req, res) => {    //maneja peticiones y respuestas 
                 i++;
             }*/
             session.close();
-            contarDuplicadosMarcas(comprasArr);
+            contarDuplicadosMarcas(comprasArr1);
             res.json(top5Marcas);
         })
         .catch(function(err){
@@ -152,15 +152,15 @@ generalController.consulta2=(req, res) => {    //maneja peticiones y respuestas 
    
 }
 
-function contarDuplicadosMarcas(comprasArr){
-    let nuevoVector =[] 
-    comprasArr.forEach((elemento) => {
-        nuevoVector.push({
+function contarDuplicadosMarcas(comprasArr1){
+    let nuevoVector1 =[] 
+    comprasArr1.forEach((elemento) => {
+        nuevoVector1.push({
             idProducto: Number(elemento.idProducto),
             cantidad: Number(elemento.cantidad)
         })
     });
-    const compraSinDuplicados = nuevoVector.reduce((acumulador,  valorActual) => {
+    const compraSinDuplicados = nuevoVector1.reduce((acumulador,  valorActual) => {
         const elementoYaExiste = acumulador.find(elemento => elemento.idProducto === valorActual.idProducto);
         if (elementoYaExiste) {
         return acumulador.map((elemento) => {
@@ -222,7 +222,7 @@ function tablaProducto (compraSinDuplicados){    //maneja peticiones y respuesta
                 console.log(totalMarcas[i]);
                 i++;
             }*/
-            console.log(totalMarcas)     
+               
             obtenerTop5Marcas(totalMarcas)  
             
         })

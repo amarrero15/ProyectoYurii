@@ -11,6 +11,9 @@ export class ProductRankingComponent implements OnInit {
   constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
+    this.getProductRanking();
+    this.getProductRanking();
+    console.log(this.ranking);
   }
 
   getProductRanking(){

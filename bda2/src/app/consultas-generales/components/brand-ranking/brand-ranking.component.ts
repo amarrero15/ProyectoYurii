@@ -11,11 +11,15 @@ export class BrandRankingComponent implements OnInit {
   constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
+    this.getBrandRanking();
+    this.getBrandRanking();
+    console.log(this.marcas);
   }
 
-  getProductRanking(){
-    this.generalService.getConsulta1().subscribe(res=>{
+  getBrandRanking(){
+    this.generalService.getConsulta2().subscribe(res=>{
       this.marcas=res;
+      console.log(this.marcas);
     })
   }
 
