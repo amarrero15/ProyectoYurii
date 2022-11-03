@@ -69,6 +69,7 @@ datos.relacionarProductoCompra=(req, res) => {
         .catch(function(err){
             console.log(err);
         })
+    
 }
 datos.relacionarClienteCompra=(req, res) => { 
     const session = driver.session();
