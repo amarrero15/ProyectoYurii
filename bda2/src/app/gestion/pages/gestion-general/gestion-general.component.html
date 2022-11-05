@@ -2,8 +2,8 @@
 
     <div class="container my-3">
         <div>
-            <mat-tab-group mat-align-tabs="end">
-                <mat-tab label="Clientes">
+            <mat-tab-group mat-align-tabs="end" style="height: 100%;">
+                <mat-tab label="Clientes" >
                     <div class="row">
                         <div class="col-md-6">
                             <label class="title" for="">Agregar Clientes</label>
@@ -12,33 +12,58 @@
                             </h6>
                             <form>
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre"  autofocus />
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido"  autofocus />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"  autofocus />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="apellido" placeholder="Apellido"  autofocus />
+                                        </div>
+                                    </div>
+                                    
+                                    
                                 </div>
                             </form>
-                            <div class="col-md-3">
+                            <form action="">
+                                <div class="mb-3">
                                 <div class="row">
-                                    
-                                        <button type="button" class="searchButton" >Subir</button>
+                                    <div class="col-md-3">
+                                        <button type="button" class="searchButton" style="width: 100px;" >Subir</button>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <button type="button" class="searchButton" style="width: 100px;">Buscar</button>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <button type="button" class="searchButton" style="width: 100px;" >Editar</button>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <button type="button" class="searchButton" style="width: 100px;">Eliminar</button>
+                                    </div>
+                                        
             
                                   
-                                        <button type="button" class="searchButton">Buscar</button>
+                                        
            
        
-                                        <button type="button" class="searchButton" >Actualizar</button>
+                                        
                      
-                                        <button type="button" class="searchButton" >Eliminar</button>
+                                        
                                 </div>
                                 
                                 
                                 
                                 
                             </div>
+                            </form>
+                            
                         </div>
                         <div class="col-md-6">
                             <div>
                                 <div>
-                                    <label class="title" for="">Búsqueda de Clientes</label>
+                                    <label class="title" for="">Búsqueda de Clientes-Productos</label>
                                 </div>
                                 <div class="row" style="margin-top: 10px;">
                                     <div class="col-md-4">
