@@ -7,20 +7,22 @@ import { RegisterComponent } from './workflow/components/register/register.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultasGeneralesModule } from './consultas-generales/consultas-generales.module';
 import { GestionModule } from './gestion/gestion.module';
+import { DatosModule } from './datos/datos.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ConsultasGeneralesModule,
-    GestionModule
+    GestionModule,
+    DatosModule
 
   ],
   providers: [],
