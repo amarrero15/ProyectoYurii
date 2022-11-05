@@ -42,14 +42,7 @@
                                     <div class="col-md-3">
                                         <button type="button" class="searchButton" style="width: 100px;">Eliminar</button>
                                     </div>
-                                        
-            
-                                  
-                                        
-           
-       
-                                        
-                     
+
                                         
                                 </div>
                                 
@@ -58,6 +51,31 @@
                                 
                             </div>
                             </form>
+
+                            <div class="mb-3">
+                                <div>
+                                    <table mat-table [dataSource]="datosCliente"  #tabla2>
+                            
+                                        <ng-container matColumnDef="id">
+                                          <th mat-header-cell *matHeaderCellDef class="form-label"> Id Cliente</th>
+                                          <td mat-cell *matCellDef="let articulo" class="rows" > {{articulo.id}} </td>
+                                        </ng-container>
+                                      
+                                        <ng-container matColumnDef="nombre">
+                                          <th mat-header-cell *matHeaderCellDef class="form-label"> Nombre</th>
+                                          <td mat-cell *matCellDef="let articulo" class="units"> {{articulo.nombre}} </td>
+                                        </ng-container>
+
+                                        <ng-container matColumnDef="apellido">
+                                            <th mat-header-cell *matHeaderCellDef class="form-label"> Nombre</th>
+                                            <td mat-cell *matCellDef="let articulo" class="units"> {{articulo.apellido}} </td>
+                                          </ng-container>
+                                      
+                                        <tr mat-header-row *matHeaderRowDef="columnasCliente"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: columnasCliente;"></tr>
+                                      </table>
+                                </div>
+                            </div>
                             
                         </div>
                         <div class="col-md-6">
@@ -105,7 +123,71 @@
                         </div>
                     </div>
                 </mat-tab>
-                <mat-tab label="Productos">Productos</mat-tab>
+                <mat-tab label="Productos">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="title" for="">Agregar Productos</label>
+                            <h6>
+                                <small class="text-muted">Ingrese los datos solicitados</small>
+                            </h6>
+                            <form>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre producto"  autofocus />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="apellido" placeholder="candidad"  autofocus />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="searchButton" style="margin-top: 0%;">Agregar</button>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="title" for="">Búsqueda de Productos</label>
+
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="nombre" placeholder="id Producto"  autofocus />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre producto"  autofocus />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="searchButton" style="margin-top: 0%;">Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <table mat-table [dataSource]="datos"  #tabla1>
+                            
+                                        <ng-container matColumnDef="producto">
+                                          <th mat-header-cell *matHeaderCellDef class="form-label"> Producto</th>
+                                          <td mat-cell *matCellDef="let articulo" class="rows" > {{articulo.nombre}} </td>
+                                        </ng-container>
+                                      
+                                        <ng-container matColumnDef="cantidad">
+                                          <th mat-header-cell *matHeaderCellDef class="form-label"> Cantidad</th>
+                                          <td mat-cell *matCellDef="let articulo" class="units"> {{articulo.cantidad}} </td>
+                                        </ng-container>
+                                      
+                                      
+                                        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
                 <mat-tab label="compras"><div class="col-md-6">
                     <figure class="text-center">
                         <label class="title">Registro de compras</label> 
