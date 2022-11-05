@@ -12,7 +12,7 @@ datos.importarCliente=(req, res) => {
     session
         .run("LOAD CSV FROM 'file:///Clientes.csv' AS row WITH toInteger(row[0]) AS IdCliente, row[1] AS NombreCliente, row[2] AS Apellido Create (c:Cliente{idCliente:IdCliente, nombreCliente:NombreCliente, apellido:Apellido})")
         .then(function(result){
-            res.send("Clientes cargados")
+            res.send("Clientes cargados");
             session.close();
         })
 

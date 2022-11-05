@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DataLoadComponent } from './components/data-load/data-load.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { CargaComponent } from './pages/carga/carga.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CargaComponent } from './pages/carga/carga.component';
   ],
   imports: [
     CommonModule,
-    MatTabsModule
+    HttpClientModule,
+    MatTabsModule,
   ]
 })
 export class DatosModule { }
