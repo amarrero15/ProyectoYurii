@@ -23,9 +23,9 @@ export class ClientSearchComponent implements OnInit {
       apellido:this.clientLastName.toString()
     }
     console.log(data);
-    /*this.generalService.getConsulta3(data).subscribe(res=>{
+    this.generalService.getConsulta3(data).subscribe(res=>{
       this.datos=res;
-    })*/
+    })
   }
 
 }

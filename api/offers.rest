@@ -1,0 +1,7 @@
+GET http://localhost:3000/3onsulta3
+Content-Type: application/json
+
+{
+    "nombre":"Selena"
+    ,"apellido":"Coch"
+}
