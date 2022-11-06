@@ -10,8 +10,8 @@ export class ClientSearchComponent implements OnInit {
   columnas: string[] = ['producto', 'cantidad'];
   datos: any = []
   @ViewChild(MatTable) tabla1!: MatTable<any>;
-  clientName='';
-  clientLastName='';
+  clientName:string='';
+  clientLastName:string='';
   constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
@@ -19,13 +19,13 @@ export class ClientSearchComponent implements OnInit {
 
   productosXCliente(){
     const data ={
-      nombre:this.clientName,
-      apellido:this.clientLastName
+      nombre:this.clientName.toString(),
+      apellido:this.clientLastName.toString()
     }
-
-    this.generalService.getConsulta3(data).subscribe(res=>{
+    console.log(data);
+    /*this.generalService.getConsulta3(data).subscribe(res=>{
       this.datos=res;
-    })
+    })*/
   }
 
 }
