@@ -1,7 +1,0 @@
-POST http://localhost:3000/consulta3
-Content-Type: application/json
-
-{
-    "nombre":"Selena"
-    ,"apellido":"Coch"
-}
