@@ -286,9 +286,10 @@ function obtenerTop5Marcas(totalMarcas){
 //***************************** CONSULTA 3 ************************/
 generalController.consulta3=(req, res) => {    //maneja peticiones y respuestas cuando visitan pag principal
     const nombrePersona= "'Selena'";
+    const apellido="'Coch'"
     const session = driver.session();
     session
-    .run("MATCH (n:Cliente) WHERE  n.idCliente IS NOT NULL AND n.nombreCliente = "+ nombrePersona+" SET n.idCliente = toString(n.idCliente) RETURN n")
+    .run("MATCH (n:Cliente) WHERE  n.idCliente IS NOT NULL AND n.nombreCliente = "+ nombrePersona+" AND n.apellido = "+ apellido+" SET n.idCliente = toString(n.idCliente) RETURN n")
     .then(function(result){
         var clienteArr=[]; 
         result.records.forEach(function(record){
