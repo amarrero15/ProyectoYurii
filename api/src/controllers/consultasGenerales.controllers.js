@@ -309,6 +309,7 @@ generalController.consulta3=(req, res) => {    //maneja peticiones y respuestas 
         console.log("id")
         console.log(resultado)
         buscarCompras(resultado);
+
         res.json(comprasArr);
 
     })
@@ -323,19 +324,20 @@ function buscarCompras(resultado){  //maneja peticiones y respuestas cuando visi
         .run("MATCH (n:Compras) WHERE n.idCliente= "+resultado+" SET n.idProducto =toString(n.idProducto), n.cantidad=toString(n.cantidad) RETURN n")
         .then(function(result){
             comprasArr=[]
+            var comprasArr2=[];
             result.records.forEach(function(record){
-                comprasArr.push({
+                comprasArr2.push({
                     idProducto: record._fields[0].properties.idProducto, //SOLO PARA STRING
                     cantidad: record._fields[0].properties.cantidad
                 });
             })
             session.close()
             var i=0;
-            while(i<comprasArr.length){
-                console.log(comprasArr[i]);
+            while(i<comprasArr2.length){
+                console.log(comprasArr2[i]);
                 i++;
             }
-            return buscarNombreProducto2(comprasArr);
+            return buscarNombreProducto2(comprasArr2);
         })
         .catch(function(err){
             console.log(err);
@@ -343,7 +345,7 @@ function buscarCompras(resultado){  //maneja peticiones y respuestas cuando visi
    
 }
 
-function buscarNombreProducto2(comprasArr){  //maneja peticiones y respuestas cuando visitan pag principal
+function buscarNombreProducto2(comprasArr2){  //maneja peticiones y respuestas cuando visitan pag principal
     const session = driver.session();
     session
         .run("MATCH (n:Producto) WHERE n.idProducto IS NOT NULL AND n.nombre IS NOT NULL SET n.idProducto = toString(n.idProducto) RETURN n")
@@ -357,12 +359,11 @@ function buscarNombreProducto2(comprasArr){  //maneja peticiones y respuestas cu
                 });
             })
             var i=0
-            nuevoVector =[] 
 
-            comprasArr.forEach((elemento) => {
+            comprasArr2.forEach((elemento) => {
                 productosArr.forEach((elemento1) => {
                     if (Number(elemento1.idProducto)== elemento.idProducto){
-                        nuevoVector.push({
+                        comprasArr.push({
                             nombre: elemento1.nombre,
                             cantidad: elemento.cantidad
                         });
@@ -371,11 +372,11 @@ function buscarNombreProducto2(comprasArr){  //maneja peticiones y respuestas cu
                 i=0
             })
             i=0;
-            while(i<nuevoVector.length){
-                console.log(nuevoVector[i]);
+            while(i<comprasArr.length){
+                console.log(comprasArr[i]);
                 i++;
             }
-            return nuevoVector;
+            return comprasArr;
         })
         .catch(function(err){
             console.log(err);
