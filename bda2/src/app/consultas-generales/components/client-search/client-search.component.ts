@@ -16,4 +16,11 @@ export class ClientSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  productosXCliente(){
+    const data ={
+      nombre:this.clientName,
+      apellido:this.clientLastName
+    }
+  }
+
 }
