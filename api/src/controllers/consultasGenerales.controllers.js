@@ -335,7 +335,47 @@ function buscarCompras(resultado){  //maneja peticiones y respuestas cuando visi
                 console.log(comprasArr[i]);
                 i++;
             }
-            return comprasArr;
+            return buscarNombreProducto2(comprasArr);
+        })
+        .catch(function(err){
+            console.log(err);
+        });
+   
+}
+
+function buscarNombreProducto2(comprasArr){  //maneja peticiones y respuestas cuando visitan pag principal
+    const session = driver.session();
+    session
+        .run("MATCH (n:Producto) WHERE n.idProducto IS NOT NULL AND n.nombre IS NOT NULL SET n.idProducto = toString(n.idProducto) RETURN n")
+        .then(function(result){
+            var productosArr=[]; 
+            result.records.forEach(function(record){
+                //console.log(record._fields[0].properties)
+                productosArr.push({
+                    idProducto: record._fields[0].properties.idProducto, //SOLO PARA STRING
+                    nombre: record._fields[0].properties.nombre
+                });
+            })
+            var i=0
+            nuevoVector =[] 
+
+            comprasArr.forEach((elemento) => {
+                productosArr.forEach((elemento1) => {
+                    if (Number(elemento1.idProducto)== elemento.idProducto){
+                        nuevoVector.push({
+                            nombre: elemento1.nombre,
+                            cantidad: elemento.cantidad
+                        });
+                    }
+                })
+                i=0
+            })
+            i=0;
+            while(i<nuevoVector.length){
+                console.log(nuevoVector[i]);
+                i++;
+            }
+            return nuevoVector;
         })
         .catch(function(err){
             console.log(err);
