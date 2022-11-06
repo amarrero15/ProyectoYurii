@@ -8,7 +8,7 @@ import { GeneralService } from '../../services/general.service';
 })
 export class ClientSearchComponent implements OnInit {
   columnas: string[] = ['producto', 'cantidad'];
-  datos: any = [{nombre:'Magnotta Bel Paese', cantidad:'1'},{nombre:'Broom-Push', cantidad:'2'},{nombre:'Sauce-Soya,Light', cantidad:'3'}]
+  datos: any = []
   @ViewChild(MatTable) tabla1!: MatTable<any>;
   clientName='';
   clientLastName='';
