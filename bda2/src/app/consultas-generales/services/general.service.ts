@@ -15,6 +15,6 @@ export class GeneralService {
     return this.http.get(`${this.API_URI}/consulta2`);
   }
   getConsulta3(data: any){
-    return this.http.get(`${this.API_URI}/consulta3`,data);
+    return this.http.get(`${this.API_URI}/consulta3/${data.nombre}/productos/${data.apellido}`);
   }
 }
