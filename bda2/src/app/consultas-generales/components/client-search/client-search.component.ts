@@ -7,7 +7,7 @@ import { GeneralService } from '../../services/general.service';
   styleUrls: ['./client-search.component.scss']
 })
 export class ClientSearchComponent implements OnInit {
-  columnas: string[] = ['producto', 'cantidad'];
+  columnas: string[] = ['nombre', 'cantidad'];
   datos: any = []
   @ViewChild(MatTable) tabla1!: MatTable<any>;
   clientName:string='';
