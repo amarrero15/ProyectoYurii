@@ -285,8 +285,8 @@ function obtenerTop5Marcas(totalMarcas){
 
 //***************************** CONSULTA 3 ************************/
 generalController.consulta3=(req, res) => {    //maneja peticiones y respuestas cuando visitan pag principal
-    const {nombrePersona}= req.body.nombre;
-    const {apellido}=req.body.apellido;
+    const nombrePersona= String(req.body.nombre);
+    const apellido=String(req.body.nombre);
     console.log(nombrePersona);
     console.log(apellido);
     const session = driver.session();
