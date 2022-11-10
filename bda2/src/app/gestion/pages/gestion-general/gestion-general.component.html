@@ -30,10 +30,19 @@
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"  autofocus />
+                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"  [(ngModel)]="this.nombreCliente"  [ngModelOptions]="{standalone: true}"autofocus />
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" id="apellido" placeholder="Apellido"  autofocus />
+                                            <input type="text" class="form-control" id="apellido" placeholder="Apellido" [(ngModel)]="this.apellidoCliente" [ngModelOptions]="{standalone: true}"  autofocus />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="nombre" placeholder="Nuevo nombre"  [(ngModel)]="this.nombreCliente" [ngModelOptions]="{standalone: true}" autofocus />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="apellido" placeholder="nuevo Apellido" [(ngModel)]="this.apellidoCliente" [ngModelOptions]="{standalone: true}"  autofocus />
                                         </div>
                                     </div>
                                     
@@ -44,19 +53,19 @@
                                 <div class="mb-3">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <button type="button" class="searchButton" style="width: 100px;" >Subir</button>
+                                        <button type="button" class="searchButton" style="width: 100px;" value="subir" (click)="crud($event)" >Subir</button>
                                     </div>
 
                                     <div class="col-md-3">
-                                        <button type="button" class="searchButton" style="width: 100px;">Buscar</button>
+                                        <button type="button" class="searchButton" style="width: 100px;" value="buscar" (click)="crud($event)">Buscar</button>
                                     </div>
 
                                     <div class="col-md-3">
-                                        <button type="button" class="searchButton" style="width: 100px;" >Editar</button>
+                                        <button type="button" class="searchButton" style="width: 100px;" value="editar" (click)="crud($event)" >Editar</button>
                                     </div>
 
                                     <div class="col-md-3">
-                                        <button type="button" class="searchButton" style="width: 100px;">Eliminar</button>
+                                        <button type="button" class="searchButton" style="width: 100px;" value="eliminar" (click)="crud($event)">Eliminar</button>
                                     </div>
 
                                         
