@@ -7,8 +7,6 @@ let resultado=3;
 ////////////////////////////////
     //CONSULTA ESPECIAL 1 //
 ////////////////////////////////
-
-
 especialController.consulta3=(req, res) => {    //maneja peticiones y respuestas cuando visitan pag principal
     const nombrePersona= req.params.nombre;
     const apellido= req.params.apellido;
@@ -122,7 +120,6 @@ especialController.consultaespecialController1=(req,res) => {
             comunesArr.push({
                 id:Number(record._fields[0].properties.idCliente)
             });
- 
         })
         i=0;
         while(i<comunesArr.length){
@@ -173,10 +170,7 @@ especialController.consultaespecialController1=(req,res) => {
         console.log(resultadoFinalArr[i]);
         i++;
     }  
-
         session1.close();
-
-         
     })
     
     .catch(function(err){

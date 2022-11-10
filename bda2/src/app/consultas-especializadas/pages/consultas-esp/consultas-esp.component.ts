@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EspecilizadoService } from 'src/app/consultas-especilizadas/services/especilizado.service';
 
 @Component({
   selector: 'app-consultas-esp',
@@ -6,11 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consultas-esp.component.scss']
 })
 export class ConsultasEspComponent implements OnInit {
-
-  constructor() { }
-  productos:any=[{nombre:'Coca-Cola', cantidad:1000},{nombre:'Pepsi', cantidad:850},{nombre:'Dr. Pepper', cantidad:700},{nombre:'Everest', cantidad:645},{nombre:'Postobon', cantidad:500},{nombre:'Inka-Cola', cantidad:250},{nombre:'Big Cola', cantidad:200}]
+  nombreCliente:string=''
+  apellidoCliente:string=''
+  constructor(private espservice:EspecilizadoService) { }
+  productos:any=[]
 
   ngOnInit(): void {
   }
 
+  getConsulta3(){
+    const data={
+      nombre:this.nombreCliente,
+      apellido:this.apellidoCliente
+    }
+
+    this.espservice.getConsulta3Cliente(data).subscribe(res=>{
+      this.productos=res
+    })
+
+  }
 }
