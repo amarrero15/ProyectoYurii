@@ -24,6 +24,7 @@ export class ConsultasEspComponent implements OnInit {
 
     this.espservice.getConsulta3Cliente(data).subscribe(res=>{
       this.productos=res
+      console.log(this.productos)
     })
 
   }
