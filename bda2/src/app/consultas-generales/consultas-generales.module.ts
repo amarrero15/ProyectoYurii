@@ -18,16 +18,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { EspecializadasComponent } from './pages/especializadas/especializadas.component';
+import { ConsultasEspecializadasModule } from '../consultas-especializadas/consultas-especializadas.module';
 @NgModule({
   declarations: [
     ProductRankingComponent,
     BrandRankingComponent,
     GeneralComponent,
     GeneralViewComponent,
-    ClientSearchComponent
+    ClientSearchComponent,
+    EspecializadasComponent
   ],
   imports: [
     CommonModule
+    ,ConsultasEspecializadasModule
     ,FormsModule
     ,HttpClientModule
     ,MatButtonModule

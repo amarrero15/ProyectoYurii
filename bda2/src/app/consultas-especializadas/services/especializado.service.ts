@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AnyARecord } from 'dns';
-
 @Injectable({
   providedIn: 'root'
 })
-export class EspecilizadoService {
+export class EspecializadoService {
   API_URI = 'http://localhost:3000';
   constructor(private http:HttpClient) { }
 
