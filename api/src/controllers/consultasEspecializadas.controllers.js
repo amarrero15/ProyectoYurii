@@ -7,6 +7,7 @@ let resultado1=3;
 ////////////////////////////////
     //CONSULTA ESPECIAL 1 //
 ////////////////////////////////
+
 especialController.consulta3=(req, res) => {    //maneja peticiones y respuestas cuando visitan pag principal
     const nombrePersona= req.params.nombre;
     const apellido= req.params.apellido;
@@ -46,7 +47,7 @@ especialController.consulta3=(req, res) => {    //maneja peticiones y respuestas
 function buscarCompras(resultado){  //maneja peticiones y respuestas cuando visitan pag principal
     const session = driver.session();
     session
-        .run("MATCH (n:Compras) WHERE n.idCliente= '"+resultado+"' SET n.idProducto =toString(n.idProducto), n.cantidad=toString(n.cantidad) RETURN n")
+        .run("MATCH (n:Compras) WHERE n.idCliente= "+resultado+" SET n.idProducto =toString(n.idProducto), n.cantidad=toString(n.cantidad) RETURN n")
         .then(function(result){
             comprasArr=[]
             comprasArr2=[];
@@ -108,19 +109,21 @@ function buscarNombreProducto2(comprasArr2){  //maneja peticiones y respuestas c
         });
    
 }
+
 especialController.consultaespecialController1=(req,res) => {
     var session = driver.session();
     var idProducto=16;
     var comunesArr=[]; 
     var clienteArr=[]
     session
-    .run("MATCH (n:Compras) WHERE n.idProducto IS NOT NULL AND n.idProducto='"+idProducto+"' AND n.idCliente<>'"+resultado+"' RETURN n")
+    .run("MATCH (n:Compras) WHERE n.idProducto IS NOT NULL AND n.idProducto='"+idProducto+"' AND n.idCliente<>"+resultado+" RETURN n")
     .then(function(result){
         
         result.records.forEach(function(record){
             comunesArr.push({
                 id:Number(record._fields[0].properties.idCliente)
             });
+ 
         })
         i=0;
         while(i<comunesArr.length){
@@ -171,7 +174,10 @@ especialController.consultaespecialController1=(req,res) => {
         console.log(resultadoFinalArr[i]);
         i++;
     }  
+
         session1.close();
+
+         
     })
     
     .catch(function(err){
