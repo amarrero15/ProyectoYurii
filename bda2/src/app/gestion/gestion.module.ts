@@ -4,14 +4,17 @@ import { GestionGeneralComponent } from './pages/gestion-general/gestion-general
 
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     GestionGeneralComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
   ]
 })
 export class GestionModule { }
