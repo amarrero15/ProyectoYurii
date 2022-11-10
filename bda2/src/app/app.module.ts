@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultasGeneralesModule } from './consultas-generales/consultas-generales.module';
 import { GestionModule } from './gestion/gestion.module';
 import { DatosModule } from './datos/datos.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,10 +20,13 @@ import { DatosModule } from './datos/datos.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     ConsultasGeneralesModule,
     GestionModule,
-    DatosModule
+    DatosModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

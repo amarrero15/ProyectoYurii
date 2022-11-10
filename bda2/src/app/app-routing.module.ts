@@ -4,6 +4,7 @@ import { ConsultasEspComponent } from './consultas-especializadas/pages/consulta
 import { GeneralComponent } from './consultas-generales/pages/general/general.component';
 import { GestionGeneralComponent } from './gestion/pages/gestion-general/gestion-general.component';
 import { CargaComponent } from './datos/pages/carga/carga.component';
+import { EspecializadasComponent } from './consultas-generales/pages/especializadas/especializadas.component';
 
 
 
@@ -13,7 +14,7 @@ const routes: Routes = [
   , { path:'gestion-general', component:GestionGeneralComponent}
 
   , { path:'carga-datos', component:CargaComponent}
-  , { path:'consultas-esp', component:ConsultasEspComponent}
+  , { path:'consultas-esp', component:EspecializadasComponent}
 ];
 
 @NgModule({
