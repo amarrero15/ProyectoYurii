@@ -27,4 +27,10 @@ export class ConsultasEspComponent implements OnInit {
     })
 
   }
+  setNombre(event:any){
+    console.log(event.target.value);
+  }
+  setApellido(event:any){
+    console.log(event.target.value);
+  }
 }

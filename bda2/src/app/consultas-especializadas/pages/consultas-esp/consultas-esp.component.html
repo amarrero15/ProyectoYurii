@@ -30,12 +30,12 @@
                             <div class="mb-3">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" autofocus />
-                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido"    autofocus />
+                                        <input type="text" class="form-control" id="clientName" placeholder="Nombre" (change)="setNombre($event)" >
+                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido" (change)="setApellido($event)"   autofocus />
                                     </div>
                                     <div class="col-md-6">
-                                        <button class="searchButton">Buscar</button>
-                                    </div>
+                                        <button class="searchButton" (click)="getConsulta3()">Buscar</button>
+                                    </div>   
                                 </div>
                             </div>
                             
