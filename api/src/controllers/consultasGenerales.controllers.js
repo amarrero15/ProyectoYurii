@@ -365,7 +365,8 @@ function buscarNombreProducto2(comprasArr2){  //maneja peticiones y respuestas c
                     if (Number(elemento1.idProducto)== elemento.idProducto){
                         comprasArr.push({
                             nombre: elemento1.nombre,
-                            cantidad: elemento.cantidad
+                            cantidad: elemento.cantidad,
+                            id: elemento1.idProducto
                         });
                     }
                 })

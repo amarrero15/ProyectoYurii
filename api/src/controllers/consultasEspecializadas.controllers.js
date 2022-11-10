@@ -8,7 +8,7 @@ let resultado1=3;
     //CONSULTA ESPECIAL 1 //
 ////////////////////////////////
 
-especialController.consulta3=(req, res) => {    //maneja peticiones y respuestas cuando visitan pag principal
+especialController.consulta3Clientes=(req, res) => {    //maneja peticiones y respuestas cuando visitan pag principal
     const nombrePersona= req.params.nombre;
     const apellido= req.params.apellido;
     console.log(nombrePersona);
@@ -29,15 +29,18 @@ especialController.consulta3=(req, res) => {    //maneja peticiones y respuestas
 
         resultado = Number(clienteArr.map(a => a.id));   //ESTA LINEA TRANSFORMA UN ARRAY EN ENTERO, PARA MANIPULAR NUMEROS Y NO LISTAS
         resultado=resultado.toString()
-        //console.log("id")
         console.log(resultado)
 
         comprasArr=[]
         buscarCompras(resultado);
        
-            
-        res.send(comprasArr);
+        i=0;
+            while(i<comprasArr.length){
+                console.log(comprasArr[i]);
+                i++;
+            }
 
+        res.send(comprasArr);
     })
     .catch(function(err){
         console.log(err);
@@ -51,14 +54,15 @@ function buscarCompras(resultado){  //maneja peticiones y respuestas cuando visi
         .then(function(result){
             comprasArr=[]
             comprasArr2=[];
+            console.log("llega abuscarcompra");
             result.records.forEach(function(record){
                 comprasArr2.push({
                     idProducto: record._fields[0].properties.idProducto //SOLO PARA STRING
-                    
                 });
             })
             session.close()
             var i=0;
+            console.log("llega al while");
             while(i<comprasArr2.length){
                 console.log(comprasArr2[i]);
                 i++;
@@ -78,7 +82,7 @@ function buscarNombreProducto2(comprasArr2){  //maneja peticiones y respuestas c
         .then(function(result){
             var productosArr=[]; 
             result.records.forEach(function(record){
-                //console.log(record._fields[0].properties)
+                console.log(record._fields[0].properties)
                 productosArr.push({
                     idProducto: record._fields[0].properties.idProducto, //SOLO PARA STRING
                     nombre: record._fields[0].properties.nombre
@@ -103,6 +107,7 @@ function buscarNombreProducto2(comprasArr2){  //maneja peticiones y respuestas c
                 i++;
             }
             return comprasArr;
+
         })
         .catch(function(err){
             console.log(err);
@@ -112,11 +117,11 @@ function buscarNombreProducto2(comprasArr2){  //maneja peticiones y respuestas c
 
 especialController.consultaespecialController1=(req,res) => {
     var session = driver.session();
-    var idProducto=16;
+    var idProducto=re.params.id;
     var comunesArr=[]; 
     var clienteArr=[]
     session
-    .run("MATCH (n:Compras) WHERE n.idProducto IS NOT NULL AND n.idProducto='"+idProducto+"' AND n.idCliente<>"+resultado+" RETURN n")
+    .run("MATCH (n:Compras) WHERE n.idProducto IS NOT NULL AND n.idProducto="+idProducto+" RETURN n")
     .then(function(result){
         
         result.records.forEach(function(record){
@@ -150,11 +155,11 @@ especialController.consultaespecialController1=(req,res) => {
             });
             
         })
-        /*i=0;
+        i=0;
         while(i<clienteArr.length){
             console.log(clienteArr[i]);
             i++;
-        } */  
+        } 
         var resultadoFinalArr=[]
             clienteArr.forEach((elemento) => {
             comunesArr.forEach((elemento1) => {
@@ -176,7 +181,8 @@ especialController.consultaespecialController1=(req,res) => {
     }  
 
         session1.close();
-
+        res.send(resultadoFinalArr)
+        return resultadoFinalArr
          
     })
     
@@ -189,7 +195,7 @@ especialController.consultaespecialController1=(req,res) => {
     //CONSULTA ESPECIAL 2 //
 ////////////////////////////////
 
-especial.consulta4=(req, res) => { 
+especialController.consulta4=(req, res) => { 
 const nombrePersona= "Willi";
     const apellido="Dunnet";
     console.log(nombrePersona);

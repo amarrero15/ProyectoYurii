@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecializadoService } from '../../services/especializado.service';
-
+import { GeneralService } from 'src/app/consultas-generales/services/general.service';
 @Component({
   selector: 'app-consulta3',
   templateUrl: './consulta3.component.html',
@@ -10,7 +10,8 @@ export class Consulta3Component implements OnInit {
   nombreCliente:string='';
   apellidoCliente:string='';
   productos:any=[]
-  constructor(private espservice: EspecializadoService) { }
+  clientes:any=[]
+  constructor(private espservice: EspecializadoService, private gse:GeneralService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +22,7 @@ export class Consulta3Component implements OnInit {
       apellido:this.apellidoCliente
     }
 
-    this.espservice.getConsulta3Cliente(data).subscribe(res=>{
+    this.gse.getConsulta3(data).subscribe(res=>{
       this.productos=res;
     })
   }
@@ -33,4 +34,11 @@ export class Consulta3Component implements OnInit {
     console.log(event.target.value);
   }
 
+  getConsultaesp1(event:any){
+    console.log(event.target.value)
+    this.espservice.getConsultaEsp1(event.target.value).subscribe(res=>{
+      this.clientes=res;
+      console.log(res);
+    })
+  }
 }

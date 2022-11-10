@@ -1,34 +1,59 @@
-<div>
-    <h6>
-        <small class="text-muted">Ingrese su nombre completo</small>
-    </h6>
-    <form>
-        <div class="mb-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <input type="text" class="form-control" id="clientName" placeholder="Nombre" [(ngModel)]="this.nombreCliente"  [ngModelOptions]="{standalone: true}">
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" [(ngModel)]="this.apellidoCliente" [ngModelOptions]="{standalone: true}" autofocus />
-                </div>
-                <div class="col-md-6">
-                    <button class="searchButton" (click)="getConsulta3()">Buscar</button>
-                </div>   
-            </div>
-        </div>
-
-        <div class="mb-3">
+<div class="row">
+    <div class="col-md-6">
+        <div>
             <h6>
-                <small class="text-muted">Seleccione el producto </small>
+                <small class="text-muted">Ingrese su nombre completo</small>
             </h6>
-
-            <div class="filterSection">
-                <select class="form-select sectorSelect" aria-label="Grado académico" id="degreeTitleInfo">
-                    <option value="" disabled selected>Sector</option>
-                    <option *ngFor="let producto of productos" value="{{producto.id}}" >{{producto.nombre}}</option>
-                </select> 
-    
-                
-            </div>
-        </div>
+            <form>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="clientName" placeholder="Nombre" [(ngModel)]="this.nombreCliente"  [ngModelOptions]="{standalone: true}">
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellido" [(ngModel)]="this.apellidoCliente" [ngModelOptions]="{standalone: true}" autofocus />
+                        </div>
+                        <div class="col-md-6">
+                            <button class="searchButton" (click)="getConsulta3()">Buscar</button>
+                        </div>   
+                    </div>
+                </div>
         
-    </form>
+                <div class="mb-3">
+                    <h6>
+                        <small class="text-muted">Seleccione el producto </small>
+                    </h6>
+        
+                    <div class="filterSection">
+                        <select class="form-select sectorSelect" aria-label="Grado académico" id="degreeTitleInfo" (change)="getConsultaesp1($event)">
+                            <option value="" disabled selected>Sector</option>
+                            <option *ngFor="let producto of productos" value="{{producto.id}}">{{producto.nombre}}</option>
+                        </select> 
+            
+                        
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>   
+    <div class="col-md-6">
+        <div class="col-md-6">
+            <table class="table table-secondary table-striped">
+                <thead>
+                    <tr>
+                        <th class="centrado">Nombres</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let cliente of clientes">
+                    <tr>
+                        <td class="centrado">{{cliente.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <td class="centrado">{{cliente.nombre}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+

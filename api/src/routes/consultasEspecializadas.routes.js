@@ -1,6 +1,6 @@
 const router= require("express").Router();
 const especialController= require("../controllers/consultasEspecializadas.controllers");
 
-router.get('/consulta3Cliente/:nombre/clientes/:apellido', especialController.consulta3);
-router.get('/consultaEsp1', especialController.consultaespecialController1);
+router.get('/consulta3Clientes/:nombre/clientes/:apellido', especialController.consulta3Clientes);
+router.get('/consultaEsp1/:id', especialController.consultaespecialController1);
 module.exports= router;
