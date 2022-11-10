@@ -4,10 +4,15 @@ const driver=require("../database/database");
 ////////////////////////////////////////////
 //************ CRUD CLIENTES *************/
 ////////////////////////////////////////////
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 gestion.agregarCliente=(req, res) => { 
-    var nombreCliente= "JORGITO";
-    var apellidoCliente = 'Melano';
-    var idCliente = 69; 
+    var nombreCliente= req.body.nombre;
+    var apellidoCliente = req.body.apellido;
+    var idCliente = getRandomInt(100); 
     const session = driver.session();
     session
     .run("CREATE (c:Cliente {nombreCliente: '"+nombreCliente+"', apellido: '"+apellidoCliente+"', idCliente: '"+idCliente+"'})")
@@ -38,8 +43,8 @@ gestion.modificarCliente=(req, res) => {
 }
 
 gestion.eliminarCliente=(req, res) => { 
-    var nombreCliente= "Jose";
-    var apellidoCliente = 'Leiva';
+    var nombreCliente= req.params.nombre;
+    var apellidoCliente = req.params.apellido;
     const session = driver.session();
     session
     .run("MATCH (n:Cliente {nombreCliente: '"+nombreCliente+"', apellido: '"+apellidoCliente+"'}) DELETE n")
@@ -53,11 +58,24 @@ gestion.eliminarCliente=(req, res) => {
 }
 
 gestion.leerCliente=(req, res) => { 
-    var nombreCliente= "Jose";
-    var apellidoCliente = 'Leiva';
+    var nombreCliente= req.params.apellido;
+    var apellidoCliente = req.params.apellido;
     const session = driver.session();
     session
     .run("MATCH (n:Cliente {nombreCliente: '"+nombreCliente+"', apellido: '"+apellidoCliente+"'}) RETURN n")
+    .then(function(result){
+        res.send("Cliente leído")
+        session.close();
+    })
+    .catch(function(err){
+        console.log(err);
+    })  
+}
+
+gestion.totalClientes=(req, res) => { 
+    const session = driver.session();
+    session
+    .run("MATCH (n:Cliente) RETURN n")
     .then(function(result){
         res.send("Cliente leído")
         session.close();
@@ -72,10 +90,10 @@ gestion.leerCliente=(req, res) => {
 ////////////////////////////////////////////
 
 gestion.agregarProducto=(req, res) => { 
-    var idProducto = 69;
-    var nombreProducto= "Consolador";
-    var marca = 'Mattel';
-    var precio = 20000; 
+    var idProducto = getRandomInt(100);
+    var nombreProducto= req.body.nombre;
+    var marca = req.body.marca;
+    var precio = req.body.marca; 
     const session = driver.session();
     session
     .run("CREATE (c:Producto {idProducto: '"+idProducto+"', nombreProducto: '"+nombreProducto+"', marca: '"+marca+"', precio: '"+precio+"'})")
@@ -89,7 +107,7 @@ gestion.agregarProducto=(req, res) => {
 }
 
 gestion.eliminarProducto=(req, res) => { 
-    var nombreProdcuto= "Consolador";
+    var nombreProducto= "Consolador";
     const session = driver.session();
     session
     .run("MATCH (n:Producto {nombreProducto: '"+nombreProducto+"'}) DELETE n")
@@ -103,10 +121,10 @@ gestion.eliminarProducto=(req, res) => {
 }
 
 gestion.leerProducto=(req, res) => { 
-    var nombreProducto= "Consolador";
+    var nombreProducto= req.params.nombre;
     const session = driver.session();
     session
-    .run("MATCH (n:Prodcuto {nombreProducto: '"+nombreProdcuto+"'}) RETURN n")
+    .run("MATCH (n:Producto {nombreProducto: '"+nombreProducto+"'}) RETURN n")
     .then(function(result){
         res.send("Producto leído")
         session.close();
@@ -115,5 +133,7 @@ gestion.leerProducto=(req, res) => {
         console.log(err);
     })  
 }
+
+
 
 module.exports = gestion;
